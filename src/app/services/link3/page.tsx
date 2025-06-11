@@ -1,9 +1,9 @@
 
-export default function Home() {
+export default function Service3Page() {
   return (
     <div>
       <h2 className="scroll-m-20 pb-2 text-4xl font-semibold tracking-tight first:mt-0 flex justify-center h-screen items-center">
-        Set up is Ready !!
+        Welcome to Service 3 Page !!
       </h2>
     </div>
   );
