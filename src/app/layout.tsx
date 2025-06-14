@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Salsa } from "next/font/google";
+import { Salsa, Roboto_Condensed  } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/share/Nav";
 
@@ -9,9 +9,15 @@ const salsa = Salsa({
   weight: "400",
 });
 
+const roboto = Roboto_Condensed({
+  variable: "--font-Roboto_Condensed",
+  subsets: ["latin"],
+  weight: "500",
+});
+
 export const metadata: Metadata = {
-  title: "Structure",
-  description: "This is a basic Structure for start a new project. Easy to set up just copy and paste ",
+  title: "News 24",
+  description: "This is a news Website. It provide us news updates 24 hours",
 };
 
 export default function RootLayout({
@@ -21,9 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${salsa.variable} antialiased dark`}>
+      <body className={`${salsa.variable} ${roboto.variable} antialiased dark`}>
         <Navbar></Navbar>
-        <main>{children}</main>
+        <main className="px-18 border">{children}</main>
       </body>
     </html>
   );

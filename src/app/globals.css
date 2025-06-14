@@ -3,10 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-body {
-  font-family: salsa;
-}
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -80,6 +76,7 @@ body {
   --sidebar-ring: oklch(0.707 0.022 261.325);
   /*-_----------{  Website Font Variables  }----------_*/
   --font-1: "Salsa", cursive;
+  --font-2: "Roboto Condensed", sans-serif;
 }
 
 .dark {
@@ -126,10 +123,6 @@ body {
 }
 
 /* G_-------------{  Brawer reset code for Website  }---------------_*/
-*{
-  margin: 0;
-  padding: 0;
-}
 *,
 *::after,
 *::before{
@@ -146,11 +139,17 @@ a:hover{
   text-decoration: none;
 }
 body{
+  margin: 0;
+  padding: 0;
   max-width: 1600px;
   font-size: 100%;
   font-family: var(--font-1);
   line-height: 1.5;
   overflow-x: hidden;
+}
+p{
+  font-family: var(--font-2)!important;
+  font-weight: 400;
 }
 /* G_----------{  Scrollbar style  }---------- */
 html{

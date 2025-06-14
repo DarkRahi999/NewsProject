@@ -1,53 +1,59 @@
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 import Link from "next/link"
-
+import { Button } from "../ui/button";
+import { Switch } from "../ui/switch";
+import "./navStyle.css"
 const Navbar = () => {
   return (
-    <div className='shadow flex justify-between h-16 items-center'>
+    <div className='navbar shadow flex justify-between h-16 items-center px-18 shadow-gray-500'>
+
     {/* ----------{ Nav Logo section }----------- */}
       <div className=''>
-        <h2 className="scroll-m-20 pb-2 text-3xl tracking-tight first:mt-0 font-bold">
-            Daily News
-        </h2>
+        <Link href="/" className="scroll-m-20 text-3xl tracking-tight first:mt-0 font-bold ">
+            Daily News 24
+        </Link>
       </div>
+
     {/* ----------{ Nav Menu section }----------- */}
       <div>
         <NavigationMenu>
             <NavigationMenuList>
                 <NavigationMenuItem className="inline-flex">
-                    <NavigationMenuLink asChild>
+                    <NavigationMenuLink className="text-md font-semibold" asChild>
                         <Link href="/">Home</Link>
                     </NavigationMenuLink>
-                    <NavigationMenuTrigger>services</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="ml-1 pt-3 text-md font-semibold">services</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <NavigationMenuLink href="/services/link1">Link 1</NavigationMenuLink>
-                        <NavigationMenuLink href="/services/link2">Link 2</NavigationMenuLink>
-                        <NavigationMenuLink href="/services/link3">Link 3</NavigationMenuLink>
+                        <NavigationMenuLink className="mx-2 block w-32 px-4 py-2" href="/services/link1">Link 1</NavigationMenuLink>
+                        <NavigationMenuLink className="mx-2 block w-32 px-4 py-2" href="/services/link2">Link 2</NavigationMenuLink>
+                        <NavigationMenuLink className="mx-2 block w-32 px-4 py-2" href="/services/link3">Link 3</NavigationMenuLink>
                     </NavigationMenuContent>
-                    <NavigationMenuLink asChild>
+                    <NavigationMenuLink className="mr-2 text-md font-semibold" asChild>
                         <Link href="/about">About</Link>
                     </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
+                    <NavigationMenuLink className="mx-1 text-md font-semibold" asChild>
                         <Link href="/contact">Contact</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>
-        </NavigationMenu>      </div>
+        </NavigationMenu>      
+      </div>
+
     {/* ----------{ dark theme & login button section }----------- */}
       <div>
-        <h2>button section</h2>
+        <Switch className="mr-6"></Switch>
+        <Button variant="default">Log in</Button>
       </div>
+
     </div>
   )
 }
 
-export default Navbar
+export default Navbar;
